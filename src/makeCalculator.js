@@ -8,19 +8,27 @@ function makeCalculator() {
     result: 0,
 
     add: function (x) {
-      return this.result + x;
+      this.result += x;
+
+      return this.result;
     },
 
     subtract: function (x) {
-      return this.result - x;
+      this.result -= x;
+
+      return this.result;
     },
 
     multiply: function (x) {
-      return this.result * x;
+      this.result *= x;
+
+      return this.result;
     },
 
     divide: function (x) {
-      return this.result / x;
+      this.result /= x;
+
+      return this.result;
     },
 
     reset: function () {
@@ -30,7 +38,7 @@ function makeCalculator() {
     },
 
     operate: function (operation, number) {
-      this.result = operation.call(this, number);
+      operation.call(this, number);
 
       return this;
     },
